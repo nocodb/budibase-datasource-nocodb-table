@@ -2,7 +2,7 @@
   "type": "datasource",
   "metadata": {},
   "schema": {
-    "docs": "https://docs.budibase.com",
+    "docs": "https://nocodb.com/apis/v3/data",
     "friendlyName": "NocoDB",
     "type": "API",
     "description": "Use NocoDB table as datasource. Uses v3 api",
