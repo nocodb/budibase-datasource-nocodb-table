@@ -1,0 +1,102 @@
+{
+  "type": "datasource",
+  "metadata": {},
+  "schema": {
+    "docs": "https://docs.budibase.com",
+    "friendlyName": "NocoDB",
+    "type": "API",
+    "description": "Use NocoDB table as datasource. Uses v3 api",
+    "datasource": {
+      "isNocoDBCloud": {
+        "type": "boolean",
+        "required": true,
+        "default": true
+      },
+      "host": {
+        "type": "string",
+        "required": false,
+        "default": "https://app.nocodb.com"
+      },
+      "apiToken": {
+        "type": "password",
+        "required": true
+      },
+      "baseId": {
+        "type": "string",
+        "required": true
+      },
+      "tableId": {
+        "type": "string",
+        "required": true
+      }
+    },
+    "query": {
+      "create": {
+        "type": "json"
+      },
+      "read": {
+        "type": "fields",
+        "fields": {
+          "fieldIdOnResult": {
+            "display": "Return field id instead of title",
+            "type": "boolean",
+            "required": false,
+            "default": false
+          },
+          "filter": {
+            "display": "Filter",
+            "type": "string",
+            "required": false
+          },
+          "pageSize": {
+            "display": "Page size (maximum 100)",
+            "type": "number",
+            "default": 25,
+            "required": false
+          },
+          "page": {
+            "display": "Page",
+            "type": "number",
+            "default": 0,
+            "required": false
+          }
+        }
+      },
+      "update": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "string",
+            "required": true
+          },
+          "fields": {
+            "type": "json",
+            "required": true
+          }
+        }
+      },
+      "upsert": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "string",
+            "required": false
+          },
+          "fields": {
+            "type": "json",
+            "required": true
+          }
+        }
+      },
+      "delete": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}
